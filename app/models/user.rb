@@ -1,9 +1,11 @@
 class User < ActiveRecord::Base
-	 validates :name, :presence => true, :uniqueness => true
-	 validates :password, :confirmation => true
-	 attr_accessor :password_confirmation
-	 attr_reader :password
-	 validate :password_must_be_present
+	has_many :user_course_ships 
+	has_many :courses,:through => :user_course_ships
+	 validates :mail, :presence => true, :uniqueness => true
+	 validates :pwd, :presence=>true,:confirmation => true
+	 attr_accessor :pwd_confirmation
+	 attr_reader :pwd
+	 
 
 	 def User.authenticate(mail,pwd)
 	 		logger.debug "in User#authenticate method, mail is #{mail} password is #{pwd}"

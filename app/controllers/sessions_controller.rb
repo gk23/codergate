@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
 		logger.debug "#{user}"
 		if user and User.authenticate(params[:mail],params[:pwd])
 			session[:user_id]  = user.id
+			@user_courses = User_courses.find_by_user(user.id)
 			redirect_to courses_path
 		else
 			redirect_to login_path,alert: "invalid user name or password."

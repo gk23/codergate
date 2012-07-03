@@ -111,6 +111,21 @@ login页面逻辑，登录后返回courses首页，右边显示用户信息
 导航栏需要为变量，登录/注册钮在用户登录后换成用户个人信息
 登录需要pwd加密+salt
  
- 问题：
- windows下git.bash不能输入中文，cat 中文内容显示乱码，提交到服务器上的注释为乱码
+问题：
+--------
+windows下git.bash不能输入中文，cat 中文内容显示乱码，提交到服务器上的注释为乱码
 
+model中多对多的处理
+--------------------
+1. 使用model和表名以ship结尾，如user_course_ship, 都为单数
+2. ship的model中添加
+	belongs_to :users
+	belongs_to :courses
+3. user的model中添加,course的model类似
+	has_many :users_courses 
+	has_many :courses,:through => :users_courses
+4. user.courses 可以得到所有关联的courses; course.users可以获得所有关联的users
+
+migration
+-----------
+1. 如何修改以前的migration，或者删除重建。表字段建错了，想删除重新建立

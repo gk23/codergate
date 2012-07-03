@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120108094959) do
+ActiveRecord::Schema.define(:version => 20120703081958) do
 
   create_table "courses", :force => true do |t|
     t.string   "name",       :limit => 80
@@ -46,6 +46,22 @@ ActiveRecord::Schema.define(:version => 20120108094959) do
     t.datetime "updated_at"
   end
 
+  create_table "user_course_ships", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "course_id"
+    t.integer  "lesson_id"
+    t.integer  "exercise_idid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_cup_ships", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "cup_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "mail"
@@ -57,22 +73,6 @@ ActiveRecord::Schema.define(:version => 20120108094959) do
     t.datetime "updated_at"
     t.string   "pwd"
     t.boolean  "is_active",    :default => false
-  end
-
-  create_table "users_courses", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "course_id"
-    t.integer  "lesson_id"
-    t.integer  "exercise_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "users_cups", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "cup_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
 end
