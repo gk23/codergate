@@ -1,0 +1,66 @@
+<div class="courses">
+    <h1>JavaScript课程列表<span class="count"><%=@courses.size%></span></h1>
+    <ul >
+        <% @courses.each do |course| %>
+        <li class="course">
+            <div class="course-info">
+                <h3><a href="<%=request.env['PATH_INFO'] %>/<%=course.id%>"><%= course.name%> (<%= course.levels%>)</a></h3>
+                <p>
+                    <%= course.desc%>
+                </p>
+            </div>
+            <div class="status">
+                <span class="percent">完成度：100%</span>
+                <br />
+                <span class="complete">完成10节课中的8节</span>
+            </div>
+            <div class="lesson-stat">
+                <span><span class="count">8</span>节课</span>
+                <span><span class="count">42</span>项练习</span>
+            </div>
+        </li>
+        <% end %>
+    </ul>
+</div>
+<div class="person-info">
+    <div class="profile"></div>
+    <div class="achieve">
+        <%@cups = Cup.all%>
+        <h3>共获得<span class="count"><%=@cups.size%></span>枚勋章</h3>
+        <br />
+        <div class="achieve-detail">
+            <%
+            
+            @cups.each do |cup|
+            %>
+            <div class="cup">
+            	<%= image_tag(cup.image,:title=>cup.desc,:size => "80x80")%>
+            </div>
+            <% end -%>
+        </div>
+    </div>
+</div>
+<!--
+<table>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+
+<% @courses.each do |course| %>
+<tr>
+<td><%= course.name%></td>
+<td><%=course.desc%></td>
+<td><%=course.levels%></td>
+<td><%= link_to 'Show', course %></td>
+<td><%= link_to 'Edit', edit_course_path(course) %></td>
+<td><%= link_to 'Destroy', course, confirm: 'Are you sure?', method: :delete %></td>
+</tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Course', new_course_path %>
+-->

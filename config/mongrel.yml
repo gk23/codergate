@@ -1,0 +1,19 @@
+---
+:host: 0.0.0.0
+:port: 3000
+:cwd: E:/ror-projects/gk23
+:log_file: log/mongrel.log
+:pid_file: log/mongrel.pid
+:environment: development
+:docroot: public
+:mime_map: 
+:daemon: false
+:debug: false
+:includes: 
+:config_script: 
+:num_processors: 1024
+:timeout: 60
+:throttle: 0
+:user: 
+:group: 
+:prefix: 

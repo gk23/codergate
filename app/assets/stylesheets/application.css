@@ -1,0 +1,207 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in
+ * this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and
+ * they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style
+ * scope.
+ *= require_self
+ *= require_tree .
+ */
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size:13px;
+	font-weight:normal;
+	line-height:18px;
+	color:gray;
+}
+#container {
+    position: relative;
+    left: 50%;
+    width: 700px;
+    margin-left: -350px;
+}
+#head {
+    /**
+     background-image: url(../images/rails.png);
+     background-repeat: repeat-y;
+     */
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e5e5e5;
+    height: 43px;
+    -moz-box-shadow: 0 0 20px #ddd;
+    -webkit-box-shadow: 0 0 20px #ddd;
+    box-shadow: 0 0 20px #ddd;
+    background: #45484d;
+    background: linear-gradient(top, #45484d 0, #000 100%);
+    background: -moz-linear-gradient(top, #45484d 0, black 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #45484d),color-stop(100%, black));
+    background: -webkit-linear-gradient(top, #45484d 0, black 100%);
+    background: -o-linear-gradient(top, #45484d 0, black 100%);
+    background: -ms-linear-gradient(top, #45484d 0, black 100%);
+    /**filter: progid
+     * :DXImageTransform.Microsoft.gradient(startColorstr='#45484d',endColorstr='#000000',
+     * GradientType=0);*/
+}
+#head-logo {
+   float: left;
+   margin-top:8px;
+   margin-left: 180px;
+}
+#head-logo a:hover {
+    color: #FFF;
+    /**font-weight: bold;*/
+    text-decoration: none;
+    background: black;
+    padding:0px;
+
+}
+#head-nav {
+    float: right;
+    margin-right: 130px;
+}
+ul {
+    list-style: none;
+    padding:0;
+}
+
+#head-nav ul {
+	list-style:none;
+    color: #FFF;
+    text-align: center;
+}
+#head-nav li {
+    float: left;
+    margin: 0px 12px;
+}
+#head-nav a:link {
+    color: #FFF;
+    font-size:15px;
+    text-decoration: none;
+    padding:5px;
+}
+#head-nav a:visited {
+    color: #FFF;
+    text-decoration: none;
+        padding:5px;
+}
+#head-nav a:hover {
+    color: #FFF;
+    /**font-weight: bold;*/
+    text-decoration: none;
+    background: rgba(80,80,80,1);
+    padding:5px;
+    border-radius: 5px;
+   -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+#content {
+    clear: both;
+    position: relative;
+    left: 50%;
+    width: 900px;
+    margin-left: -450px;
+    margin-bottom: 60px;
+}
+#foot {
+    clear: both;
+    position: relative;
+    left: 50%;
+    width: 900px;
+    margin-left: -450px;
+    margin-top: 30px;
+    border-top: 1px solid #e5e5e5;
+}
+#foot ul {
+    list-style: none;
+    color: #AAAAAA;
+    width: 100%;
+    margin-left: 20%;/*调整foot中的内容居中*/
+}
+#foot li {
+    float: left;
+    padding: 10px;
+}
+a:link {
+    color: #666;
+    text-decoration: none;
+    padding:5px;
+}
+a:visited {
+    color: #666;
+    text-decoration: none;
+    padding:5px;
+}
+a:hover {
+    color: #FFF;
+    /**font-weight: bold;*/
+    text-decoration: none;
+    background: rgba(80,80,80,1);
+    padding:5px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.count {
+    padding: 4px 8px 5px;
+    background-color: #DDD;
+    display: inline-block;
+    font-weight: bold;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+.status{
+    float:right;
+}
+.courses,.lessons{
+    float:left;
+    width:65%;
+    margin:20px;
+    padding-right:20px;
+    border-right:1px dotted #e5e5e5;
+}
+.course{
+    padding-bottom:10px;
+    border-top:1px solid #e5e5e5;
+}
+/**
+ *     右边侧栏显示个人信息部分
+ */
+.person-info{
+    float:left;
+    width:25%;
+}
+.cup{
+	float: left;
+	margin: 6px;
+}
+.lesson{
+	padding-bottom:10px;
+    border-top:1px solid #e5e5e5;
+}
+#lesson-left{
+	float:left;
+	width:35%;
+}
+#lesson-right{
+	float:right;
+	width:60%;
+	height:500px;
+	margin-bottom:10px;
+	border:2px solid #CCCCCC;
+}
+
+/**
+ *  index.html - css
+ **/
+ #login{
+	 margin: 0 auto;
+	 width:600px;
+ }
+ 

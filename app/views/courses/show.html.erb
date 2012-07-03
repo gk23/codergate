@@ -1,0 +1,30 @@
+<h1><%= @course.name%></h1>
+<p><%= @course.desc%></p>
+<div class="lessons">
+    <ul >
+        <% @lessons.each do |lesson| %> 
+        <li class="lesson">
+        	<h3><a href='../lessons/<%=lesson.id%>'  /><%=lesson.name%></a></h3>
+        	<%=lesson.desc%>
+        </li>
+        <% end %>
+    </ul>
+</div>
+<div class="person-info">
+    <div class="profile"></div>
+    <div class="achieve">
+        <% @cups = Cup.all%> <h3>共获得<span class="count"><%= @cups.size%></span>枚勋章</h3>
+        <br />
+        <div class="achieve-detail">
+            <%
+
+            @cups.each do |cup|
+            %>
+            <div class="cup">
+                <%= image_tag(cup.image,:title=>cup.desc,:size => "80x80")%>
+            </div>
+            <% end -%>
+        </div>
+    </div>
+</div>
+<%= link_to 'Back', courses_path %> 

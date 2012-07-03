@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>codergate | 程序员之门</title>
+        <%= stylesheet_link_tag    "application" %>
+        <%= javascript_include_tag "application" %>
+        <%= csrf_meta_tags %>
+    </head>
+    <body>
+
+            <div id="head">
+                <div id="head-logo">
+               		<a href="/" target="_self"><%= image_tag("logo.png",:size=>"120x30")%></a>
+                </div>
+                <div id="head-nav">
+                    <ul>
+                        <li>
+                            <a href="../courses">所有课程</a>
+                        </li>
+                        <li>
+                            <a href="#">查看进展</a>
+                        </li>
+                        <li>
+                            <%=link_to "登录","logon/login.html"%>
+                        </li>
+                        <li>
+                            <a href="#">注册</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="content">
+                <%= yield %>
+            </div>
+            <div id="foot">
+                <ul>
+                    <li>
+                        © 2011 程序员之门
+                    </li>
+                    <li>
+                        <a href="#">加入我们</a>
+                    </li>
+                    <li>
+                        <a href="#">关于我们</a>
+                    </li>
+                    <li>
+                        <a href="#">联系我们</a>
+                    </li>
+                    <li>
+                        <a href="#">版权说明</a>
+                    </li>
+                </ul>
+            </div>
+
+    </body>
+</html>

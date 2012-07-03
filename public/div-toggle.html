@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title><%=@lesson.name%></title>
+	<script type="text/javascript">
+	var curPane="tip1";
+	function show(switchSysBar){
+		if(switchSysBar==curPane){return;}
+		document.getElementById(curPane).style.display="none";
+		document.getElementById(switchSysBar).style.display="block";
+		curPane=switchSysBar;
+	}
+	</script>
+	</head>
+	<body>
+		<p><a href="javascript:void(0)" onclick='show("tip1")'>111</a></p>
+		<div id="tip1" style="display:block">333</div>
+		<p><a href="javascript:void(0)" onclick='show("tip2")'>111</a></p>
+		<div id="tip2" style="display:none">333</div>
+		<p><a href="javascript:void(0)" onclick='show("tip3")'>111</a></p>
+		<div id="tip3" style="display:none">333</div>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @cup.name %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%= @cup.desc %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= @cup.image %>
+</p>
+
+<p>
+  <b>Filter:</b>
+  <%= @cup.filter %>
+</p>
+
+
+<%= link_to 'Edit', edit_cup_path(@cup) %> |
+<%= link_to 'Back', cups_path %>

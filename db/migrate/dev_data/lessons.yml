@@ -1,0 +1,40 @@
+begin1:
+  name: 认识一下自己
+  desc: 看看你能用javascript做什么
+  course_id: 1
+begin2:
+  name: 确认或拒绝
+  desc: 使用confirm, alert, warning等通知栏
+  course_id: 1
+begin3:
+  name: 变量
+  desc: 存储我们的内容
+  course_id: 1
+begin4:
+  name: 数字和字符串
+  desc: 学习分离文本和数字等操作
+  course_id: 1
+begin5:
+  name: 编辑器和数组
+  desc: 编辑器和数组的使用
+  course_id: 1
+begin6:
+  name: if语句
+  desc: if语句的声明和使用方法
+  course_id: 1
+begin7:
+  name: 加加渐减
+  desc: 介绍自增与自减
+  course_id: 1
+begin8:
+  name: 循环语句
+  desc: while和for循环语句的使用
+  course_id: 1
+medium1:
+  name: 中级教程第一节
+  desc: 面向对象的介绍
+  course_id: 2
+medium2:
+  name: 中级教程第二节
+  desc: 面向对象的类声明
+  course_id: 2

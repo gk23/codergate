@@ -1,0 +1,86 @@
+<div id="lesson-left">
+<p>
+  <b>Name:</b>
+  <%= @lesson.name %>
+</p>
+<p>
+  <b>Course:</b>
+  <%= @lesson.course_id %>
+</p>
+<ul>
+<% @exercises.each do |exercise|%>
+	<li class="not_started">
+		<a onclick='show("<%=exercise.id%>")'><%=exercise.name%></a>
+		<div id="<%=exercise.id%>" style="display:none"><%=exercise.desc%></div>
+	</li>
+<%end%>
+</ul>
+<%= link_to 'Edit', edit_lesson_path(@lesson) %> |
+<%= link_to 'Back', lessons_path %>
+</div>
+<div id="lesson-right">
+	
+</div>
+<script type="text/javascript">
+	var curPane="7729125";
+	function show(switchSysBar){
+		if(switchSysBar==curPane){return;}
+		document.getElementById(curPane).style.display="none";
+		document.getElementById(switchSysBar).style.display="block";
+		curPane=switchSysBar;
+	}
+	/*
+	* 显示交互式控制台
+	*/
+	function Console(width,height,command) { 
+		var container=document.createElement("div"); 
+		this.container=container; 
+		
+		container.style.width=(width); 
+		container.style.height=(height); 
+		container.style.margin="0px"; 
+		container.style.backgroundColor="#eeeeee"; 
+		container.style.fontFamily="Courier"; 
+		container.style.color="#808080"; 
+		container.style.fontSize="12px"; 
+		this.output=document.createElement("div"); 
+		container.appendChild(this.output); 
+		container.innerHTML+="js>" 
+		this.input=document.createElement("textarea"); 
+		container.appendChild(this.input); 
+		this.input.style.backgroundColor="#eeeeee"; 
+		this.input.style.borderWidth="0px"; 
+		this.input.style.color="#808080"; 
+		this.input.style.fontFamily="Courier"; 
+		this.input.style.width="90%" 
+		this.input.style.fontSize="12px" 
+		this.input.style.position="relative"; 
+		this.input.style.top="2px"; 
+		command=command||function(str) { 
+			var e; 
+			try{ 
+				var r=eval(str); 
+			} catch(e) { 
+				return "Bad command"; 
+			} 
+			return r; 		
+		} 
+		
+		this.input.command=function() { 
+		this.parentNode.childNodes[0].innerHTML+=this.value+'<br/>' 
+		this.parentNode.childNodes[0].innerHTML+=(command(this.value)+"<br/>") 
+		
+		} 
+		this.input.onkeyup=new Function("e","e=e||event;if(e.keyCode!=13)return;this.command();this.value='';"); 
+		this.appendto=function(parent) { 
+		parent.appendChild(this.container); 
+		} 
+		container=null; 
+	} 
+	
+	//var db=new DrawingBoard(100,100) 
+	//db.drawLine([5,5],[36,44],"red") 
+	//document.body.appendChild(db.container); 
+	var c=new Console("100%","100%"); 
+	c.appendto(document.getElementById("lesson-right")); 
+</script>

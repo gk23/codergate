@@ -1,0 +1,48 @@
+  # # sqlite3
+  # adapter: sqlite3
+  # database: db/development.sqlite3
+  # pool: 5
+  # timeout: 5000
+#   
+  # # mysql
+  # adapter: mysql2
+  # encoding: utf8
+  # database: blog_development
+  # pool: 5
+  # username: root
+  # password:
+  # socket: /tmp/mysql.sock
+#   
+  # # postgresql
+  # adapter: postgresql
+  # encoding: unicode
+  # database: blog_development
+  # pool: 5
+  # username: blog
+  # password:
+#   
+  # # SQLite3 Database for JRuby Platform
+  # adapter: jdbcsqlite3
+  # database: db/development.sqlite3
+#   
+  # # MySQL Database for JRuby Platform
+  # adapter: jdbcmysql
+  # database: blog_development
+  # username: root
+  # password: 
+#     
+  # # oracle
+  # adapter: oracle
+  # database: testdb
+  # username: root
+  # password: 
+#     
+  # # SQL server
+  # adapter: sqlserver
+  # mode: ado # or 'odbc'
+  # host: localhost
+  # dsn: # require for odbc
+  # database: testdb
+  # username: root
+  # password:
+  # autocomit: true

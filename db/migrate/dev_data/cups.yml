@@ -1,0 +1,16 @@
+FirstLesson:
+  name: FirstLesson
+  desc: 第一节课完成后获此勋章
+  image: achieves/FirstLesson.png
+Exercises10:
+  name: Exercises10
+  desc: 完成10个练习获此勋章
+  image: achieves/Exercises10.png
+Exercises125:
+  name: Exercises25
+  desc: 完成25个练习获此勋章
+  image: achieves/Exercises25.png
+ProgrammingIntroCourse:
+  name: ProgrammingIntroCourse
+  desc: 看完介绍即可获此勋章
+  image: achieves/ProgrammingIntroCourse.png

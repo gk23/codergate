@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>codergate | 程序员之门</title>
+<script src="/assets/application.js"></script>
+<link href="/assets/application.css" type="text/css" rel="stylesheet">
+<style type="text/css">
+.container {
+	margin: 200px auto 0 auto;
+	width:600px;
+}
+.content {
+	height:500px;
+}
+.slogan {
+	float:left;
+	margin-right:20px;
+	text-align:center;
+}
+.slogan-title {
+	font:bold 20px/30px Verdana, Geneva, sans-serif;
+	display:block;
+}
+#loginForm {
+	float:left;
+}
+.text {
+    background: none repeat scroll 0 0 padding-box #E8F4FC;
+    border: 1px solid #0D7BD5;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 3px rgba(0, 0, 0, 0.3) inset;
+    color: #888888;
+    cursor: text;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0 0 18px;
+    padding: 10px 5px;
+    width: 250px;
+	font-size:16px;
+}
+.footer {
+
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="content">
+    <div class="slogan"><span class="slogan-title">CoderGate</span><span class="slogan-content">踏进程序员世界的大门</span></div>
+    <form class="login" action="/login" method="get" id="loginForm">
+      <div>
+        <input class="text" type="email" name="mail" spellcheck="false" placeholder="邮 箱"  tabindex="1">
+      </div>
+      <div>
+        <input class="text" type="password" name="pwd" placeholder="密 码" tabindex="2">
+      </div>
+      <input class="button" type="submit" value="登 录" tabindex="3">
+      <div class="actions">
+        <input id="remember_me" type="checkbox" name="rememberme" checked>
+        <label class="remember_me" for="remember_me">记住我</label>
+        <span class="middot">&middot;</span> <a class="reset" href="/resetpassword">忘记密码？</a> </div>
+      <div class="clearfix"></div>
+    </form>
+    <div class="blank"> </div>
+  </div>
+  <div class="footer"> &copy; 2012 程序员之门 <span class="middot">&middot;</span> <a href="http://weibo.com/codergate" target="_blank">新浪微博</a> <span class="middot">&middot;</span> <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备00001111号</a> </div>
+</div>
+<div class="reg"> <a href="/apply" class="register">申请注册帐号</a> </div>
+</body>
+</html>
