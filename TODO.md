@@ -1,4 +1,5 @@
 2011/12/8
+=========
 调整Ruby server为mongrel
 1 在gemfile中添加
 gem 'Mongrel'
