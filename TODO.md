@@ -21,7 +21,7 @@ Rails g scaffold lesson
 	• head和foot，
 	• courses页面。
 	• 如何固定高度，使得footer部分始终在下面？
-
+git
 2011/12/13
 完成http://127.0.0.1:3000/courses# 基本界面设计
 
@@ -94,7 +94,7 @@ rake about显示所有gem版本和环境
 登录页面：
 完善课程
 
-2012-07-03
+2012-07-0
 login页面逻辑，登录后返回courses首页，右边显示用户信息
 导航栏需要为变量，登录/注册钮在用户登录后换成用户个人信息
 登录需要pwd加密+salt
