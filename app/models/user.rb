@@ -10,7 +10,9 @@ class User < ActiveRecord::Base
 	 def User.authenticate(mail,pwd)
 	 		logger.debug "in User#authenticate method, mail is #{mail} password is #{pwd}"
 	 	  	if user = find_by_mail(mail)
+	 	  		logger.debug "the user's password should be #{user.pwd}, the entered pwd is #{pwd}"
 	 	  		if pwd == user.pwd
+	 	  			logger.debug "validate success,the password is correct."
 	 	  			user
 	 	  		end
 	 	  	end
