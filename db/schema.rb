@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120703130225) do
+ActiveRecord::Schema.define(:version => 20120704023858) do
 
   create_table "courses", :force => true do |t|
     t.string   "name",       :limit => 80
@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(:version => 20120703130225) do
     t.integer  "lesson_num"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "pwd"
+    t.string   "password"
     t.boolean  "is_active",    :default => false
   end
 

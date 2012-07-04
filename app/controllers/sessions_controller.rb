@@ -10,9 +10,11 @@ class SessionsController < ApplicationController
 		logger.debug "Comming in SessionsController#create method."
 		user = User.find_by_mail(params[:mail])
 		logger.debug "#{user}"
-		if user and User.authenticate(params[:mail],params[:pwd])
+		if user and User.authenticate(params[:mail],params[:password])
 			session[:user_id]  = user.id
-			@user_courses = User_courses.find_by_user(user.id)
+			user = User.find(user.id)
+			courses = user.courses
+			logger.debug "#{courses}"
 			redirect_to courses_path
 		else
 			redirect_to login_path,alert: "invalid user name or password."
