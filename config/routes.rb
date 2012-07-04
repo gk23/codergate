@@ -1,4 +1,4 @@
-Gk23::Application.routes.draw do
+Codergate::Application.routes.draw do
   root :to => "sessions#login"
   get "sessions/new"
 

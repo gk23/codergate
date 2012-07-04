@@ -135,3 +135,9 @@ migration
 1. 问题: user.pwd返回 nil, User.find(1)明明可以返回pwd的值。修改了pwd字段名称为password后正常。
 2. 导航栏中如何添加变量，用户登录和未登录显示不同
 3. yaml编写注意：必须用空格，不能用tab；key: value的形式冒号后需要一个空格
+4. 如何写测试用例和运行？rake test
+5. rspec的用法
+
+2012-07-05
+==========
+重新构思网站结构，使用axure做一套原型，震中原则

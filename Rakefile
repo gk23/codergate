@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Gk23::Application.load_tasks
+Codergate::Application.load_tasks
