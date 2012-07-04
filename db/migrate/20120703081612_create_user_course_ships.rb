@@ -4,9 +4,13 @@ class CreateUserCourseShips < ActiveRecord::Migration
       t.integer :user_id
       t.integer :course_id
       t.integer :lesson_id
-      t.integer :exercise_idid
+      t.integer :exercise_id
 
       t.timestamps
     end
+  end
+
+  def self.down
+  	drop_table :user_course_ships
   end
 end

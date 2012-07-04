@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
 		logger.debug "#{user}"
 		if user and User.authenticate(params[:mail],params[:password])
 			session[:user_id]  = user.id
-			user = User.find(user.id)
+			@user = User.find(user.id)
 			courses = user.courses
 			logger.debug "#{courses}"
 			redirect_to courses_path

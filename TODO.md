@@ -117,7 +117,7 @@ windows下git.bash不能输入中文，cat 中文内容显示乱码，提交到�
 
 model中多对多的处理
 --------------------
-1. 使用model和表名以ship结尾，如user_course_ship, 都为单数
+1. 使用model和表名以ship结尾，如user_course_ship, 都为单数 <b>done.</b>
 2. ship的model中添加
 	belongs_to :users
 	belongs_to :courses
@@ -128,4 +128,10 @@ model中多对多的处理
 
 migration
 -----------
-1. 如何修改以前的migration，或者删除重建。表字段建错了，想删除重新建立
+1. 如何修改以前的migration，或者删除重建。表字段建错了，想删除重新建立 <b>done.</b>
+
+2012-07-04
+==========
+1. 问题: user.pwd返回 nil, User.find(1)明明可以返回pwd的值。修改了pwd字段名称为password后正常。
+2. 导航栏中如何添加变量，用户登录和未登录显示不同
+3. yaml编写注意：必须用空格，不能用tab；key: value的形式冒号后需要一个空格
