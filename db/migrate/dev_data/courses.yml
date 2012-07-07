@@ -1,0 +1,8 @@
+course1:
+    id: 1
+    name: JavaScript入门
+    desc: JavaScript基础知识，基本语法，变量类型，数据结构等
+course2:
+    id: 2
+    name: JavaScript中级教程
+    desc: JavaScript进阶知识，面向对象，闭包等
