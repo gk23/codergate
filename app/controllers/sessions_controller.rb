@@ -1,16 +1,17 @@
 class SessionsController < ApplicationController
+	skip_before_filter :auth
 
 	# 显示登录页面
 	def login
-
+		session[:user_id] = nil
 	end
 
 	# 验证用户并转向主页
 	def create
 		logger.debug "Comming in SessionsController#create method."
 		user = User.find_by_mail(params[:mail])
-		logger.debug "#{user}"
-		if user and User.authenticate(params[:mail],params[:password])
+		
+		if is_pass?(params[:mail],params[:password])
 			session[:user_id]  = user.id
 			@user = User.find(user.id)
 			courses = user.courses
@@ -25,4 +26,11 @@ class SessionsController < ApplicationController
 	def destroy
 		
 	end
+
+	def is_pass?(mail,password)
+		user = User.find_by_mail(mail)
+		logger.debug "#{user}"
+		user and User.authenticate(mail,password)
+	end
+
 end

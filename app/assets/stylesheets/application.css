@@ -17,12 +17,6 @@ body {
 	line-height:18px;
 	color:gray;
 }
-#container {
-    position: relative;
-    left: 50%;
-    width: 700px;
-    margin-left: -350px;
-}
 #head {
     /**
      background-image: url(../images/rails.png);
@@ -104,16 +98,44 @@ ul {
     clear: both;
     position: relative;
     left: 50%;
-    width: 900px;
-    margin-left: -450px;
+    width: 980px;
+    margin-left: -490px;
     margin-bottom: 60px;
+}
+.sidebar{
+    border: 1px solid blue;
+    margin: 16px 0px ;
+    /* 设置最小高度，兼容各浏览器 */
+    height:auto !important;
+    height:100px;
+    min-height:100px;
+
+    width:  200px;
+    float:  left;
+}
+.main{
+    width:760px;
+    /* 设置最小高度，兼容各浏览器 */
+    height:auto !important;
+    height:200px;
+    min-height:200px;
+
+    border:1px solid blue;
+    margin: 16px 0px ;
+    float: right;
+}
+.nav-title{
+    background-color: green;
+}
+ul{
+    padding: 0 0 0px 20px ;
 }
 #foot {
     clear: both;
     position: relative;
     left: 50%;
-    width: 900px;
-    margin-left: -450px;
+    width: 980px;
+    margin-left: -490px;
     margin-top: 30px;
     border-top: 1px solid #e5e5e5;
 }

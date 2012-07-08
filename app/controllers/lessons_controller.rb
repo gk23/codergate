@@ -1,4 +1,5 @@
 class LessonsController < ApplicationController
+  layout "lesson_layout"
   # GET /lessons
   # GET /lessons.json
   def index
@@ -13,6 +14,7 @@ class LessonsController < ApplicationController
   # GET /lessons/1
   # GET /lessons/1.json
   def show
+
     @lesson = Lesson.find(params[:id])
     @exercises = Exercise.find(:all,:conditions=>{:lesson_id=>[@lesson.id]})
     respond_to do |format|

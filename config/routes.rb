@@ -1,5 +1,5 @@
 Codergate::Application.routes.draw do
-  root :to => "sessions#login"
+  root :to => "users#show"
   get "sessions/new"
 
   get "sessions/create"
