@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 	skip_before_filter :auth
-
+	layout :false
 	# 显示登录页面
 	def login
 		session[:user_id] = nil
@@ -24,7 +24,8 @@ class SessionsController < ApplicationController
 	end
 
 	def destroy
-		
+		session[:user_id] = nil
+		redirect_to :login 
 	end
 
 	def is_pass?(mail,password)
