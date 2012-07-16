@@ -68,3 +68,13 @@ windows下：在%USERPROFILE%下创建_netrc文件，写入：
   machine github.com
   login aoaogk@gmail.com
   password 1...r
+
+
+丢弃本地修改，被服务器端覆盖
+===============================
+`git checkout 文件名`， 如`git checkout app\controllers\sessions_controller.rb`
+
+
+参考资料
+==========
+<http://zensheno.blog.51cto.com/2712776/490748>

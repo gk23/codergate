@@ -13,6 +13,7 @@ class SessionsController < ApplicationController
 		
 		if is_pass?(params[:mail],params[:password])
 			session[:user_id]  = user.id
+			session[:user_name] = user.name
 			@user = User.find(user.id)
 			courses = user.courses
 			logger.debug "#{courses}"
@@ -25,6 +26,7 @@ class SessionsController < ApplicationController
 
 	def destroy
 		session[:user_id] = nil
+		session[:user_name] = nil
 		redirect_to :login 
 	end
 

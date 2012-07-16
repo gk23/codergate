@@ -19,5 +19,38 @@ class User < ActiveRecord::Base
 				user
 			end
 		end
+	end
+
+	def User.find_completed_courses(user_id)
+		courses = User.find(user_id).courses
+		completed_courses = []
+		courses.each  do |course| 
+			logger.debug "the course id is #{course.id}, the name is #{course.name}"
+			progress = UserCourseShip.find_progress(user_id,course.id)
+			logger.debug "the progress is #{progress}"
+			if progress!=nil and progress == 1
+				completed_courses.push(course)
+			end
+		end
+		return completed_courses	  	
 	end  
+
+	def User.find_uncompleted_courses(user_id)
+		courses = User.find(user_id).courses
+		uncompleted_courses = []
+		courses.each do |course| 
+			progress = UserCourseShip.find_progress(user_id,course.id)
+			if progress != 1
+				uncompleted_courses.push(course)
+			end
+		end
+		return uncompleted_courses
+	end
+
+	def User.find_courses(user_id)
+		return nil unless user_id
+		return User.courses
+	end
+
+
 end

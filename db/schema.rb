@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120707003133) do
+ActiveRecord::Schema.define(:version => 20120710015642) do
 
   create_table "courses", :force => true do |t|
     t.string   "name",       :limit => 80
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(:version => 20120707003133) do
     t.integer  "exercise_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "progress_completed", :precision => 3, :scale => 2
   end
 
   create_table "user_cup_ships", :force => true do |t|

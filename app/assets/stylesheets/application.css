@@ -73,26 +73,28 @@ ul {
     float: left;
     margin: 0px 12px;
 }
+
 #head-nav a:link {
     color: #FFF;
-    font-size:15px;
+    font-size:12px;
     text-decoration: none;
-    padding:5px;
+    padding:9px;
+    min-width: 24px;
 }
 #head-nav a:visited {
     color: #FFF;
     text-decoration: none;
-        padding:5px;
+    padding:9px;
+    min-width: 24px;
 }
 #head-nav a:hover {
     color: #FFF;
     /**font-weight: bold;*/
     text-decoration: none;
     background: rgba(80,80,80,1);
-    padding:5px;
-    border-radius: 5px;
-   -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
+    padding:9px;
+    min-width: 24px;
+
 }
 #content {
     clear: both;
@@ -149,6 +151,7 @@ ul{
     float: left;
     padding: 10px;
 }
+/**
 a:link {
     color: #666;
     text-decoration: none;
@@ -161,7 +164,7 @@ a:visited {
 }
 a:hover {
     color: #FFF;
-    /**font-weight: bold;*/
+    /**font-weight: bold;
     text-decoration: none;
     background: rgba(80,80,80,1);
     padding:5px;
@@ -169,6 +172,7 @@ a:hover {
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
 }
+**/
 .count {
     padding: 4px 8px 5px;
     background-color: #DDD;

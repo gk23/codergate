@@ -15,13 +15,10 @@
             <div id="head-nav">
                 <ul>
                     <li>
-                        <a href="../courses">所有课程</a>
+                        <a href="../courses" style="width:100px;">所有课程</a>
                     </li>
                     <li>
-                        <a href="#">查看进展</a>
-                    </li>
-                    <li>
-                        <%=link_to "登录","logon/login.html"%>
+                        <a href="/" ><%=session[:user_name]%></a>
                     </li>
                     <li>
                         <%=link_to "退出",:controller=>:sessions,:action=>:destroy %>
@@ -35,9 +32,15 @@
                     <div class="nav-title">进行中</div>
                     <div class="nav-courses">
                         <ul>
-                            <li><div><%= link_to "javascript入门教程" -%><span>完成20%</span></div></li>
-                            <li>javascript入门教程</li>
-                            <li>javascript入门教程</li>
+                        <% 
+                            un_courses = User.find_uncompleted_courses session[:user_id]
+                            co_courses = User.find_completed_courses session[:user_id]
+                            un_courses.each do |u|
+                        %>
+                            <li><%=u.name%><span>完成20%</span></li>
+                        <%
+                            end 
+                        %>
                         </ul>
                         <div>+添加课程</div>
                     </div>
@@ -45,9 +48,13 @@
                 <div class="sidebar-nav">
                     <div class="nav-title">已完成</div>
                     <ul>
-                        <li>javascript入门教程</li>
-                        <li>javascript入门教程</li>
-                        <li>javascript入门教程</li>
+                        <%
+                            co_courses.each do |u|
+                        %>
+                            <li><%=u.name%></li>
+                        <%
+                            end 
+                        %>
                     </ul>                     
                 </div>
             </div> <!--sidebar end-->

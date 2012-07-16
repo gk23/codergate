@@ -166,22 +166,77 @@ axure制作原型, done
 
 ###2. 制作登录首页
 
+2012-07-10
+==========
+###完善个人登录页面
+1. 左侧导航栏正确加载
+2. 右侧内容显示完成课程信息及图表；如果没有课程显示添加课程的按钮
+
+###问题总结
+1. 方法前加self与不加有什么区别
+
+    答：在方法前加不加self都是一样的，self表示实例对象  
+
+2. Migration类中change 和up方法有什么区别？
+    
+    答：如果migration文件已以下开头，则rails会生成change方法，代替up和down，rails会知道如何做down的操作，所以不用实现down方法。  
+    * add_column
+    * add_index
+　　* add_timestamps
+    * create_table
+    * remove_timestamps
+    * rename_column
+    * rename_index
+    * rename_table
+
+
+3. 主要的创建表、修改列的方法总结
+4. 弄清路由写法与link_to, redirect_to, form中的action的常用写法；每次写一个URL一定要对应一个路由映射吗？刘瑞写link_to "新用户","/users/new" 或者 link_to " 主页", "/" 这些需要一个路由映射找到一个controller处理吗？
+
+###markdown常用语法
+
+1. pre和code标签（加背景颜色和code类型）：在每一行文字前添加 4个空格或者1个tab
+2. <p>段落：
+3. <br>换行：文字结尾加两个以上的空格
+4. 标题：
+    * setext-style: 文字下使用2个以上===表示标题1，---表示标题2
+    * atx-style: 文字以#开头，相应#个数1~6个表示标题1到6
+5. 加重<strong>和<em>: 文字首尾加*，数量越多越重。 例如：*注意*， **更加注意**
+6. 有序列表：1. 
+7. 无序列表：*,+,- 后面加空格
+8. 链接：
+    * 简单链接： <链接地址>， 如<baidu.com>展示成<a href="baidu.com">baidu.com</a>
+    * 添加文字： [文字显示](链接地址 题目名)， 如 [百度主页](http://baidu.com "百度搜索")， 生成<a title="百度搜索" href="http://baidu.com">百度主页</a>
+注意：pre在序列中不能显示，例如
+1. hello
+    
+    this doesn't show pre and code style. 
+
+2. bad
+
+下面是可以的
+hello
+
+     this doesn't show pre and code style.
+
+bad
+
 2012-07-15
 ==========
 ###功能
-1. 登录页：
-	* 注册
+1. 登录页： -p3
+	* 注册:注册页面只有邮箱和密码；默认存储邮箱@前的为用户名。
 	* 忘记密码  
 	* 记住我  
 	* 密码验证  
-2. 登录后首页
-	* header右边登录和未登录显示的判断
-	* nav部分的实现
+2. 登录后首页 - p1
+	* header右边登录和未登录显示的判断 **done**,只有登录后状态，所以不用判断。
+	* 左面nav部分的实现
 	* 添加课程的实现
 	* 首页应为完成课程的图表展示
 	* nav中添加个人信息
 	* 登录后header右上角导航包括所有课程/个人设置，个人设置包括个人信息修改，退出功能
-3. 	完善课程:
+3. 	完善课程: p2
 	* javascript：翻译现有的
 	* rails: 自己按照agile web development的书写一个互动教程
 	* 需要一个创建教程的编写及发布功能
@@ -196,3 +251,13 @@ axure制作原型, done
 3. 添加课程的课程列表页面
 4. 个人设置页面
 5. 具体练习页面
+
+2012-07-16
+==========
+jsp, servlet和html.erb,controller的区别? 
+
+    默认scaffold生成的view中都与model同名的目录，并且生成4个标准的html.erb，这些只是对model实体的操作。  
+    如果有些html.erb没用，则可以删除；  
+    可以在views中创建文件夹，放置同一功能块的页面；
+
+rspec单元测试
