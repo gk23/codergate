@@ -8,4 +8,8 @@ class UserCourseShip < ActiveRecord::Base
         return nil unless ucs
         return ucs.progress_completed
     end
+
+    def UserCourseShip.add_course(user_id,course_id)
+        
+    end
 end

@@ -1,6 +1,9 @@
 <div class="courses">
     <h1>JavaScript课程列表<span class="count"><%=@courses.size%></span></h1>
     <ul >
+        <%
+            logger.debug("coming in index view of courses.")
+        %>
         <% @courses.each do |course| %>
         <li class="course">
             <div class="course-info">
@@ -8,6 +11,20 @@
                 <p>
                     <%= course.desc%>
                 </p>
+                <% 
+                    progress = UserCourseShip.find_progress(session[:user_id],course.id)
+                    course_status = "添加"
+                    if progress==1
+                        course_status = "已完成"
+                    elsif progress>0 and progress<1
+                        course_status = "已添加"
+                    end    
+                %>
+                <% if course_status !="添加" %>
+                    <div class="add-course"><%=button_to_function(course_status,"addCourse("+session[:user_id].to_s+","+course.id.to_s+")") %></div> 
+                <% else %>
+                    <div class="add-course"><%=label_tag course_status %></div> 
+                <% end %> 
             </div>
             <div class="status">
                 <span class="percent">完成度：100%</span>
@@ -22,52 +39,3 @@
         <% end %>
     </ul>
 </div>
-<div class="person-info">
-    <div class="profile"></div>
-    <div class="achieve">
-        <%
-            user_id = session["user_id"]
-            user = User.find user_id
-            if @cups = user.cups       
-        %>
-        <h3>共获得<span class="count"><%=@cups.size%></span>枚勋章</h3>
-        <br />
-        <div class="achieve-detail">
-                <%
-                
-                @cups.each do |cup|
-                %>
-                <div class="cup">
-                	<%= image_tag(cup.image,:title=>cup.desc,:size => "80x80")%>
-                </div>
-                <% end -%>
-        <% else -%>
-                <b>完成课程你也可以获得勋章哦，快来试试吧</b>
-        <% end -%>
-        </div>
-    </div>
-</div>
-<!--
-<table>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-
-<% @courses.each do |course| %>
-<tr>
-<td><%= course.name%></td>
-<td><%=course.desc%></td>
-<td><%=course.levels%></td>
-<td><%= link_to 'Show', course %></td>
-<td><%= link_to 'Edit', edit_course_path(course) %></td>
-<td><%= link_to 'Destroy', course, confirm: 'Are you sure?', method: :delete %></td>
-</tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Course', new_course_path %>
--->

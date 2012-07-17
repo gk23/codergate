@@ -84,4 +84,9 @@ class UsersController < ApplicationController
       format.json { head :ok }
     end
   end
+
+  def add_course (user_id,course_id)
+    UserCourseShip.add_course user_id,course_id
+    redirect_to "/"
+  end
 end

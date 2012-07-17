@@ -28,6 +28,31 @@
         </div>
         <div id="content">
             <div class="sidebar">
+                <div class="person-info">
+                    <div class="profile"></div>
+                    <div class="achieve">
+                        <%
+                            user_id = session["user_id"]
+                            user = User.find user_id
+                            if @cups = user.cups       
+                        %>
+                        <h3>共获得<span class="count"><%=@cups.size%></span>枚勋章</h3>
+                        <br />
+                        <div class="achieve-detail">
+                                <%
+                                
+                                @cups.each do |cup|
+                                %>
+                                <div class="cup">
+                                    <%= image_tag(cup.image,:title=>cup.desc,:size => "40x40")%>
+                                </div>
+                                <% end -%>
+                        <% else -%>
+                                <b>完成课程你也可以获得勋章哦，快来试试吧</b>
+                        <% end -%>
+                        </div>
+                    </div>
+                </div>
                 <div class="sidebar-nav">
                     <div class="nav-title">进行中</div>
                     <div class="nav-courses">
@@ -37,12 +62,12 @@
                             co_courses = User.find_completed_courses session[:user_id]
                             un_courses.each do |u|
                         %>
-                            <li><%=u.name%><span>完成20%</span></li>
+                            <li><%= link_to u.name, "/courses/"+u.id.to_s %><span>完成度：<%=(UserCourseShip.find_progress(session[:user_id],u.id)*100).to_i %>%</span></li>
                         <%
                             end 
                         %>
                         </ul>
-                        <div>+添加课程</div>
+                        <div>+<%=link_to "添加课程","/courses" %></div>
                     </div>
                 </div>
                 <div class="sidebar-nav">
@@ -51,7 +76,7 @@
                         <%
                             co_courses.each do |u|
                         %>
-                            <li><%=u.name%></li>
+                            <li><%= link_to u.name, "/courses/"+u.id.to_s %><span>完成度：<%=(UserCourseShip.find_progress(session[:user_id],u.id)*100).to_i %>%</span></li>
                         <%
                             end 
                         %>

@@ -1,10 +1,5 @@
 Codergate::Application.routes.draw do
   root :to => "users#show"
-  get "sessions/new"
-
-  get "sessions/create"
-
-  get "sessions/destroy"
 
   controller :sessions do
 	get 'login' => :login
@@ -21,6 +16,10 @@ Codergate::Application.routes.draw do
   resources :users
 
   resources :courses
+
+  match "/doing" => "logs#index"
+  match "auth/:provider/callback", :to => "users#auth_callback"  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

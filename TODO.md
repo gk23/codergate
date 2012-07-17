@@ -231,8 +231,8 @@ bad
 	* 密码验证  
 2. 登录后首页 - p1
 	* header右边登录和未登录显示的判断 **done**,只有登录后状态，所以不用判断。
-	* 左面nav部分的实现
-	* 添加课程的实现
+	* 左面nav部分的实现 done.
+	* 添加课程的实现 
 	* 首页应为完成课程的图表展示
 	* nav中添加个人信息
 	* 登录后header右上角导航包括所有课程/个人设置，个人设置包括个人信息修改，退出功能
@@ -257,7 +257,82 @@ bad
 jsp, servlet和html.erb,controller的区别? 
 
     默认scaffold生成的view中都与model同名的目录，并且生成4个标准的html.erb，这些只是对model实体的操作。  
-    如果有些html.erb没用，则可以删除；  
-    可以在views中创建文件夹，放置同一功能块的页面；
+    * 如果有些html.erb没用，则可以删除；  
+    * 可以在views中创建文件夹，放置同一功能块的页面；
 
-rspec单元测试
+[rspec单元测试](http://www.infoq.com/cn/articles/effective-rails-testing/)
+
+2012-07-17
+==========
+###类型转换：to_i, to_f, to_s的应用  
+
+###常用的tag：  
+* <http://api.rubyonrails.org/classes/ActionView/Helpers/FormTagHelper.html>  
+* <http://api.rubyonrails.org/classes/ActionView/Helpers/JavaScriptHelper.html>  
+
+####js中实现兼容的跳转  
+* window.location="http://baidu.com" 兼容各种浏览器
+
+###devise_for
+devise是一个验证(authentication)套件,使用方法见:
+1. <http://ihower.tw/rails3/auth.html>  
+2. <http://cn.asciicasts.com/episodes/210-customizing-devise>  
+3. <http://www.cnblogs.com/chengguyun/archive/2011/07/26/2117756.html>  
+
+###routes常用写法
+1. scaffold生成路由：resources :users
+2. 自定义路径处理（类似spring中定义，不符合REST）
+    match "/uploads/*path" => "gridfs#serve"
+或者match "/uploads/*path", :to => "gridfs#serve"  
+其中，URL是否以"/"开头无区别。"/uploads/*path"和"uploads/*path"是相同的，  
+3. 某个controller中映射URL和action：
+  controller :sessions do
+    get 'login' => :login
+    post 'login' => :create
+    delete 'logout' => :destroy
+  end
+4. 单条简单路由
+  get "sessions/new"  #生成 get "sessions/new", :controller=>:sessions, :action=>:new 
+5. 嵌套路由 
+    resources :products do
+        resources :comments
+        resource :seller
+    end
+6. shallow 嵌套路由. 与不加shallow的区别为，可以识别/comments/:id, 代替识别/products/:p_id/comment/:id
+    resources :products, :shallow => true do
+        resources :comments
+    end
+7 resource中定义member和collection块
+  resources :users do
+    collection do
+      get "index"
+      get "delete_all"
+    end
+
+    member do
+      get "show"
+      get "edit"
+    end
+  end   
+8. namespace
+
+render常用方法
+---------------
+1. render   
+#不加参数默认自己找template，如果有与action同名的则返回  
+
+2. render(:action=>:index)
+需要注意：不会
+
+3. 返回字符串  
+render :text=>"hello cups."  # 返回一个字符串
+
+4. render(:inline=>%{<h2>test inline</h2>})  
+通过inline参数可以直接写html代码并返回
+
+
+
+### respond_to 
+
+
+### link_to

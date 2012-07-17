@@ -2,6 +2,7 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
+    logger.debug("comming in index method of CoursesController.")
     @courses = Course.all
     respond_to do |format|
       format.html # index.html.erb

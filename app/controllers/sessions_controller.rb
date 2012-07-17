@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
 			@user = User.find(user.id)
 			courses = user.courses
 			logger.debug "#{courses}"
-			redirect_to courses_path
+			redirect_to "/"
 		else
 			redirect_to login_path,alert: "invalid user name or password."
 		end
