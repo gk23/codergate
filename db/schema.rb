@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(:version => 20120710015642) do
     t.integer  "user_id"
     t.integer  "course_id"
     t.integer  "lesson_id"
-    t.integer  "exercise_id"
+    t.integer  "exercise_idid"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.decimal  "progress_completed", :precision => 3, :scale => 2

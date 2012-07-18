@@ -1,3 +1,4 @@
+# coding: utf-8
 class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
@@ -79,5 +80,21 @@ class CoursesController < ApplicationController
       format.html { redirect_to courses_url }
       format.json { head :ok }
     end
+  end
+
+  def add
+    @user_course_ship = UserCourseShip.new do |u|
+      u.user_id=params[:user_id]
+      u.course_id=params[:course_id]
+      u.progress_completed=0
+    end
+    respond_to do |format|
+      if @user_course_ship.save
+        format.html{redirect_to "/",notice: '成功添加课程!'}
+      else
+        format.html{redirect_to "/courses"}
+      end
+    end
+
   end
 end

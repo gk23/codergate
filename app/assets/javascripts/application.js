@@ -36,5 +36,5 @@ function hasClassName(element,className) {
  * 为指定定用户添加课程
  */
 function addCourse(userId,courseId){
-    window.location = "user/"+userId+"/course/"+courseId
+    window.location = "users/"+userId+"/courses/"+courseId+"/add"
 }
