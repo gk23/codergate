@@ -4,14 +4,10 @@ class CupsController < ApplicationController
   def index
     @cups = Cup.all
 
-    render(:inline=>"<h2>test inline</h2>
-                      the other line.")
-=begin
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @cups }
     end
-=end
   end
 
   # GET /cups/1

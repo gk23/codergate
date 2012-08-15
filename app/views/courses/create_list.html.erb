@@ -1,0 +1,32 @@
+<div class="courses">
+    <div>
+        <h1>我创建的课程列表<span class="count"><%=@courses.size%></span></h1>
+        <a href="courses/new" class="" style="float:right">创建新课程</a>
+    </div>
+    <ul >
+        <%
+            logger.debug("coming in create_list view of courses.")
+        %>
+        <% @courses.each do |course| %>
+        <li class="course">
+            <div class="course-info">
+                <h3><%= link_to "#{course.name}(#{course.levels})",{ :controller =>:courses,:action=>:edit,:id=>course} %></h3>
+                <p>
+                    <%= course.desc%>
+                </p>
+            </div>
+            <div class="status">
+                <span class="percent">未发布</span><a href="">查看</a> &nbsp;<%= link_to '删除', course, confirm: '你确定要删除吗?', method: :delete %>
+                <br />
+                <span class="complete">创建时间：<%=Time.now%></span>
+                <br />
+                <span class="complete">10个用户在上次课</span>
+            </div>
+            <div class="lesson-stat">
+                <span><span class="count">8</span>节课</span>
+                <span><span class="count">42</span>项练习</span>
+            </div>
+        </li>
+        <% end %>
+    </ul>
+</div>

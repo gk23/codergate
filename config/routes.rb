@@ -20,6 +20,8 @@ Codergate::Application.routes.draw do
   match "/doing" => "logs#index"
   match "auth/:provider/callback", :to => "users#auth_callback"  
 
+  match "/create" => "courses#create_list"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

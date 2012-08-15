@@ -35,6 +35,11 @@ class CoursesController < ApplicationController
   # GET /courses/1/edit
   def edit
     @course = Course.find(params[:id])
+    @lessons = Lesson.find(:all,:conditions=>{:course_id=>[@course.id]})
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @course }
+    end
   end
 
   # POST /courses
@@ -44,8 +49,8 @@ class CoursesController < ApplicationController
 
     respond_to do |format|
       if @course.save
-        format.html { redirect_to @course, notice: 'Course was successfully created.' }
-        format.json { render json: @course, status: :created, location: @course }
+        format.html { redirect_to "/courses/#{@course.id}/edit", notice: 'Course was successfully created.' }
+        #format.json { render json: @course, status: :created, location: @course }
       else
         format.html { render action: "new" }
         format.json { render json: @course.errors, status: :unprocessable_entity }
@@ -53,6 +58,13 @@ class CoursesController < ApplicationController
     end
   end
 
+  def create_list
+    @courses = Course.all
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @courses }
+    end
+  end
   # PUT /courses/1
   # PUT /courses/1.json
   def update
@@ -76,7 +88,7 @@ class CoursesController < ApplicationController
     @course.destroy
 
     respond_to do |format|
-      format.html { redirect_to courses_url }
+      format.html { redirect_to "/create" }
       format.json { head :ok }
     end
   end
