@@ -20,7 +20,7 @@
                         course_status = "已添加"
                     end    
                 %>
-                <% if course_status !="添加" %>
+                <% if course_status =="添加" %>
                     <div class="add-course"><%=button_to_function(course_status,"addCourse("+session[:user_id].to_s+","+course.id.to_s+")") %></div> 
                 <% else %>
                     <div class="add-course"><%=label_tag course_status %></div> 

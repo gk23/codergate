@@ -13,12 +13,14 @@ Codergate::Application.routes.draw do
 
   resources :cups
 
-  resources :users
+  resources :users do
+    resources :courses do 
+      get "add"
+    end
+  end
 
-  resources :courses
+  resources :courses 
 
-  match "/doing" => "logs#index"
-  match "auth/:provider/callback", :to => "users#auth_callback"  
 
   match "/create" => "courses#create_list"
 
