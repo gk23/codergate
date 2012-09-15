@@ -22,6 +22,8 @@ Codergate::Application.routes.draw do
   resources :courses 
 
 
+  match "/create" => "courses#create_list"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

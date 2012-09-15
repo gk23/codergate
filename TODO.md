@@ -274,7 +274,7 @@ jsp, servlet和html.erb,controller的区别?
 * window.location="http://baidu.com" 兼容各种浏览器
 
 ###devise_for
-devise是一个验证(authentication)套件,使用方法见:
+devise是一个验证(authentication)套件,使用方法见:  
 1. <http://ihower.tw/rails3/auth.html>  
 2. <http://cn.asciicasts.com/episodes/210-customizing-devise>  
 3. <http://www.cnblogs.com/chengguyun/archive/2011/07/26/2117756.html>  
@@ -319,7 +319,7 @@ devise是一个验证(authentication)套件,使用方法见:
 render常用方法
 ---------------
 1. render   
-#不加参数默认自己找template，如果有与action同名的则返回  
+不加参数默认自己找template，如果有与action同名的则返回  
 
 2. render(:action=>:index)
 需要注意：不会
@@ -327,7 +327,7 @@ render常用方法
 3. 返回字符串  
 render :text=>"hello cups."  # 返回一个字符串
 
-4. render(:inline=>%{<h2>test inline</h2>})  
+4. render(:inline=>%{\<h2>test inline\</h2>})  
 通过inline参数可以直接写html代码并返回
 
 
@@ -336,3 +336,21 @@ render :text=>"hello cups."  # 返回一个字符串
 
 
 ### link_to
+
+2012-08-14
+==========
+做一个创建和修改课程的页面
+几页的外观
+
+完成：
+1. exercise的数据更新
+2. exercise的字段添加
+3. 增加”创建课程“页面
+
+TODO:
+1. 点击创建新课程后，输入基本信息后，跳转到该课程编辑页，显示lesson列表，可以添加、删除lesson
+2. 点击某个课程名后，跳转到上面页面
+
+
+2012-08-15
+==========

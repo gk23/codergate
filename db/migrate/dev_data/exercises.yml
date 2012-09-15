@@ -1,40 +1,29 @@
 begin1:
-  name: 认识一下自己
-  desc: 看看你能用javascript做什么
-  lesson_id: 7729125
+  id: 1
+  name: 你叫什么名字
+  desc: 你好，让我们认识一下，你叫什么名字
+  instructions: 输入你的姓名，前后加英文双引号，例如："kun"
+  lesson_id: 1
 begin2:
-  name: 确认或拒绝
-  desc: 使用confirm, alert, warning等通知栏
-  lesson_id: 7729125
+  name: 字符串的长度
+  desc: 不错！想知道你名字有几个字吗？你可以通过名字后加<code>.length</code>来查看。
+  instructions: 我名字的长度为<code>"kun".length</code>
+  lesson_id: 1
 begin3:
-  name: 变量
-  desc: 存储我们的内容
-  lesson_id: 7729125
+  name: 加法运算
+  desc: 非常好！现在我们做点算术题。我们可以通过程序来做数学运算
+  instructions: 要计算2+3，只需要输入 2+3
+  lesson_id: 1
 begin4:
-  name: 数字和字符串
-  desc: 学习分离文本和数字等操作
-  lesson_id: 7729125
-begin5:
-  name: 编辑器和数组
-  desc: 编辑器和数组的使用
-  lesson_id: 7729125
-begin6:
-  name: if语句
-  desc: if语句的声明和使用方法
-  lesson_id: 7729125
-begin7:
-  name: 加加渐减
-  desc: 介绍自增与自减
-  lesson_id: 7729125
-begin8:
-  name: 循环语句
-  desc: while和for循环语句的使用
-  lesson_id: 7729125
+  name: 其他运算
+  desc: 不止加法，我们还可以做乘法、除法或减法
+  instructions: 输入* 可以做乘法，/可以做除法，-可以做减法
+  lesson_id: 1
 medium1:
   name: 中级教程第一节
   desc: 面向对象的介绍
-  lesson_id: 2
+  lesson_id: 9
 medium2:
   name: 中级教程第二节
   desc: 面向对象的类声明
-  lesson_id: 2
+  lesson_id: 9
