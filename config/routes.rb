@@ -9,9 +9,8 @@ Codergate::Application.routes.draw do
 
   resources :exercises
 
-  resources :lessons
+  resources :lessons,:except=>[:new]
 
-  resources :cups
 
   resources :users do
     resources :courses do 
@@ -19,7 +18,9 @@ Codergate::Application.routes.draw do
     end
   end
 
-  resources :courses 
+  resources :courses  do
+    resources :lessons,:only=>[:new]
+  end
 
 
   match "/create" => "courses#create_list"

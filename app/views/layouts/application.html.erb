@@ -18,13 +18,13 @@
                         <a href="/create" style="width:100px;">创建课程</a>
                     </li>
                     <li>
-                        <a href="../courses" style="width:100px;">所有课程</a>
+                        <a href="/courses" style="width:100px;">所有课程</a>
                     </li>
                     <li>
                         <a href="/" ><%=session[:user_name]%></a>
                     </li>
                     <li>
-                        <%=link_to "退出",:controller=>:sessions,:action=>:destroy %>
+                        <%=link_to "退出",{:controller=>:sessions,:action=>:destroy},{:method=>:delete} %>
                     </li>
                 </ul>
             </div>
