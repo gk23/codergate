@@ -354,7 +354,6 @@ TODO:
 
 2012-08-16
 ==========
-<<<<<<< HEAD
 TODO:
 1. 点击创建新课程后，输入基本信息后，跳转到该课程编辑页，显示lesson列表，可以添加、删除lesson
 2. 点击某个课程名后，跳转到上面页面
@@ -369,4 +368,10 @@ edit_course_lesson_path(@course.id,lesson.id)
 
 只有创建lesson时才连带courses_id.只有new action需要带course_id的参数，add action可以从new页面中获得
 显示和修改不用，因为lesson中存储course_id。包括add,edit, update, show, index,destroy
->>>>>>> 5978bb0ea9cd90a63a2acac27a36a4cb6266660f
+
+
+2012-10-06
+==============
+1. 编辑某个course时，可以在线编写title和desc
+2. 编写某个lesson时，可以在线编写title和desc, 同时显示exercise列表，具有添加exercise的功能
+

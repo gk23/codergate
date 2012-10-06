@@ -1,6 +1,17 @@
-<h1>Editing lesson</h1>
+<h1><%= link_to Course.find(@lesson.course_id).name,edit_course_path(@lesson.course_id)%>>>(新建章节)</h1>
 
 <%= render 'form' %>
-
-
-<%= link_to 'Back', lessons_path %>
+<!--显示练习列表-->
+<%
+	es = Exercise.find :all, :conditions=>["lesson_id=?",@lesson.id]
+	
+	if es 
+		es.each do |e|
+			logger.debug("=============#{e.name}=============")
+%>
+			<a src="#"><%=e.name%></a>
+<%
+			gets "<a>",e.name,"</a>"
+		end
+	end
+%>
