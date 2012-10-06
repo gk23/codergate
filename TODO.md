@@ -352,8 +352,21 @@ TODO:
 2. 点击某个课程名后，跳转到上面页面
 
 
-2012-08-15
+2012-08-16
 ==========
+<<<<<<< HEAD
 TODO:
 1. 点击创建新课程后，输入基本信息后，跳转到该课程编辑页，显示lesson列表，可以添加、删除lesson
 2. 点击某个课程名后，跳转到上面页面
+=======
+嵌套路由URL写法：
+new_course_lesson_path(@course.id)
+传递的参数为course_id
+
+edit_course_lesson_path(@course.id,lesson.id)
+传递的参数为course_id, lesson_id
+相当于：/courses/#{@course.id}/lessons/#{lesson.id}/edit
+
+只有创建lesson时才连带courses_id.只有new action需要带course_id的参数，add action可以从new页面中获得
+显示和修改不用，因为lesson中存储course_id。包括add,edit, update, show, index,destroy
+>>>>>>> 5978bb0ea9cd90a63a2acac27a36a4cb6266660f

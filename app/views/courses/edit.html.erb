@@ -10,12 +10,12 @@
     <ul >
         <% @lessons.each do |lesson| %> 
         <li class="lesson">
-            <h3><a href='../lessons/<%=lesson.id%>'  /><%=lesson.name%></a></h3>
+            <h3><%= link_to lesson.name,edit_lesson_path(lesson.id) %></h3>     
             <%=lesson.desc%>
         </li>
         <% end %>
     </ul>
     <%end%>
 </div>
-
+<%= link_to '添加章节',new_course_lesson_path(@course.id) %>
 <%= link_to '预览', @course %> 

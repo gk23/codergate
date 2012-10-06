@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120814012715) do
+ActiveRecord::Schema.define(:version => 20120707003133) do
 
   create_table "courses", :force => true do |t|
     t.string   "name",       :limit => 80
@@ -33,13 +33,13 @@ ActiveRecord::Schema.define(:version => 20120814012715) do
   create_table "exercises", :force => true do |t|
     t.string   "name"
     t.text     "desc"
-    t.integer  "lesson_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "instructions"
     t.string   "hint"
     t.string   "default_code"
     t.string   "correct_code"
+    t.integer  "lesson_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "lessons", :force => true do |t|
@@ -54,10 +54,10 @@ ActiveRecord::Schema.define(:version => 20120814012715) do
     t.integer  "user_id"
     t.integer  "course_id"
     t.integer  "lesson_id"
-    t.integer  "exercise_idid"
+    t.integer  "exercise_id"
+    t.decimal  "progress_completed", :precision => 3, :scale => 2
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "progress_completed", :precision => 3, :scale => 2
   end
 
   create_table "user_cup_ships", :force => true do |t|
