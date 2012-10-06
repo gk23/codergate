@@ -27,7 +27,10 @@ class LessonsController < ApplicationController
   # GET /lessons/new.json
   def new
     @lesson = Lesson.new
+    # 使用实例变量不能传递，使用session传递
+    session[:course_id] = params[:course_id]
 
+    logger.debug("==========in LessonsController#new method, #{params}==========")
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @lesson }
@@ -44,6 +47,10 @@ class LessonsController < ApplicationController
   def create
     @lesson = Lesson.new(params[:lesson])
 
+    #new 方法中已设置course_id到session中，取出后立刻删除
+    @lesson.course_id = session[:course_id]
+    session[:course_id] =nil
+    logger.debug("======in LessonsController#create method, the @lesson.course_id is #{@lesson.course_id}=========")
     respond_to do |format|
       if @lesson.save
         format.html { redirect_to @lesson, notice: 'Lesson was successfully created.' }

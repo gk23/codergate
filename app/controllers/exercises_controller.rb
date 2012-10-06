@@ -1,4 +1,5 @@
 class ExercisesController < ApplicationController
+  layout "lesson_layout"
   # GET /exercises
   # GET /exercises.json
   def index
@@ -26,6 +27,7 @@ class ExercisesController < ApplicationController
   def new
     @exercise = Exercise.new
 
+    session[:lesson_id]=params[:lesson_id]
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @exercise }
@@ -42,6 +44,8 @@ class ExercisesController < ApplicationController
   def create
     @exercise = Exercise.new(params[:exercise])
 
+    @exercise.lesson_id = session[:lesson_id]
+    session[:lesson_id]=nil
     respond_to do |format|
       if @exercise.save
         format.html { redirect_to @exercise, notice: 'Exercise was successfully created.' }

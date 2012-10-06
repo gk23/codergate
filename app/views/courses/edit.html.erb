@@ -5,7 +5,7 @@
 <p><%= @course.desc%></p>
 <div class="lessons">
     <% if @lessons.size==0 %>
-        <span>请添加课程章节：</span><%= link_to '添加章节',:controller=>:lessons,:action=>:new %>
+        <span>请添加课程章节：</span><%= link_to '添加章节',new_course_lesson_path(@course.id) %>
     <%else %>
     <ul >
         <% @lessons.each do |lesson| %> 

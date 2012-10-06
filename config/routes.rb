@@ -7,7 +7,7 @@ Codergate::Application.routes.draw do
 	delete 'logout' => :destroy
   end
 
-  resources :exercises
+  resources :exercises,:except=>[:new]
 
   resources :lessons,:except=>[:new]
 
@@ -20,6 +20,10 @@ Codergate::Application.routes.draw do
 
   resources :courses  do
     resources :lessons,:only=>[:new]
+  end
+
+  resources :lessons  do
+    resources :exercises,:only=>[:new]
   end
 
 

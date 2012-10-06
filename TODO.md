@@ -375,3 +375,8 @@ edit_course_lesson_path(@course.id,lesson.id)
 1. 编辑某个course时，可以在线编写title和desc
 2. 编写某个lesson时，可以在线编写title和desc, 同时显示exercise列表，具有添加exercise的功能
 
+2012-10-07
+==============
+1. 编辑某个course时，可以在线编写title和desc
+2. 编写某个lesson时，可以在线编写title和desc, 
+3. exercise编辑页面中，添加指令，hint等字段，

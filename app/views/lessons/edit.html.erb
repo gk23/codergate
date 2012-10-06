@@ -2,16 +2,20 @@
 
 <%= render 'form' %>
 <!--显示练习列表-->
+<h2>练习列表</h2>
 <%
 	es = Exercise.find :all, :conditions=>["lesson_id=?",@lesson.id]
 	
 	if es 
+		i=0
 		es.each do |e|
-			logger.debug("=============#{e.name}=============")
+			i+=1
+			eName = "练习"+i.to_s+":"+e.name
+						
 %>
-			<a src="#"><%=e.name%></a>
+			<h3><%=link_to eName,edit_exercise_path(e.id)%></h3>
 <%
-			gets "<a>",e.name,"</a>"
 		end
 	end
 %>
+<%= link_to '添加练习',new_lesson_exercise_path(@lesson.id) %>
