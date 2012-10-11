@@ -32,20 +32,18 @@
         <div id="content">
             <div class="sidebar">
                 <div class="person-info">
-                    <div class="profile"></div>
+                    <div class="profile">
+                    <%
+                        user_id = session["user_id"]
+                        user = User.find user_id
+                    %>
+                        <%=user.name%>
+                    </div>
                     <div class="achieve">
                         <%
-                            user_id = session["user_id"]
-                            user = User.find user_id
                             if @cups = user.cups       
-                        %>
-                        <h3>共获得<span class="count"><%=@cups.size%></span>枚勋章</h3>
-                        <br />
-                        <div class="achieve-detail">
-                                <%
-                                
-                                @cups.each do |cup|
-                                %>
+                                    @cups.each do |cup|
+                         %>
                                 <div class="cup">
                                     <%= image_tag(cup.image,:title=>cup.desc,:size => "40x40")%>
                                 </div>
@@ -53,7 +51,6 @@
                         <% else -%>
                                 <b>完成课程你也可以获得勋章哦，快来试试吧</b>
                         <% end -%>
-                        </div>
                     </div>
                 </div>
                 <div class="sidebar-nav">
