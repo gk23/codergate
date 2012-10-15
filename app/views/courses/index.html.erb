@@ -22,21 +22,26 @@
                         course_status = "已添加"
                     end    
                 %>
-                <% if course_status =="添加" %>
-                    <div class="add-course"><%=button_to_function(course_status,"addCourse("+session[:user_id].to_s+","+course.id.to_s+")") %></div> 
-                <% else %>
-                    <div class="add-course"><%=label_tag course_status %></div> 
-                <% end %> 
+                <div class="lesson-stat">
+                    <span><span class="count">8</span>节课</span>
+                    <span><span class="count">42</span>项练习</span>
+                </div>
+
+
             </div>
             <div class="status">
                 <span class="percent">完成度：100%</span>
                 <br />
                 <span class="complete">完成10节课中的8节</span>
+
+                <% if course_status =="添加" %>
+                <div class="add-course"><%=button_to_function(course_status,"addCourse("+session[:user_id].to_s+","+course.id.to_s+")") %></div> 
+                <% else %>
+                    <div class="add-course"><%=label_tag course_status %></div> 
+                <% end %> 
             </div>
-            <div class="lesson-stat">
-                <span><span class="count">8</span>节课</span>
-                <span><span class="count">42</span>项练习</span>
-            </div>
+
+
         </li>
         <% end %>
     </ul>
