@@ -380,3 +380,8 @@ edit_course_lesson_path(@course.id,lesson.id)
 1. 编辑某个course时，可以在线编写title和desc
 2. 编写某个lesson时，可以在线编写title和desc, 
 3. exercise编辑页面中，添加指令，hint等字段，
+
+2012-10-21
+===============
+1.学习组织js, css为个别html用。学习assert pipeline
+2. 使用jeditor实现在线修改title和desc
