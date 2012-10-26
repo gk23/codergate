@@ -4,8 +4,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>codergate | 程序员之门</title>
         <%= stylesheet_link_tag    "application" %>
-        <%= javascript_include_tag "application" %>
+        <%= yield :styles %>
         <%= csrf_meta_tags %>
+        <%= javascript_include_tag "application","jquery-1.7.1.min","jquery.jeditable.mini" %>
+        <%= yield :scripts %>
+
     </head>
     <body>
         <div id="head">

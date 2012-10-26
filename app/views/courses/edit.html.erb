@@ -1,8 +1,16 @@
 <!--
     管理界面，只有自己创建的课程才能修改
 -->
-<h1><%= @course.name%></h1>
-<p><%= @course.desc%></p>
+<%= content_for :scripts do %>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.course_title').editable('http://www.example.com/save.php');
+            $(".course_desc").editable('http://www.example.com/save.php');
+        });
+    </script>
+<% end %>
+<div class="course_title"><%= @course.name%></div>
+<p class="course_desc"><%= @course.desc%></p>
 <div class="lessons">
     <% if @lessons.size==0 %>
         <span>请添加课程章节：</span><%= link_to '添加章节',new_course_lesson_path(@course.id) %>
